@@ -1,0 +1,62 @@
+﻿@using StudioTemp.Models;
+
+@model Employee
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body" >
+            <h4 class="card-title" >Basic form elements</h4>
+            <p class="card-description">
+                Basic form elements
+            </p>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Name" for="exampleInputName1">Name</label>
+                    <input asp-for="Name" type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" for="exampleInputName1">Description</label>
+                    <input asp-for="Description" type="text" class="form-control" id="exampleInputName1" placeholder="Description">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Facebook" for="exampleInputName1">Facebook</label>
+                    <input asp-for="Facebook" class="form-control" id="exampleInputName1" placeholder="Facebook">
+                    <span asp-validation-for="Facebook" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Twitter" for="exampleInputName1">Twitter</label>
+                    <input asp-for="Twitter" class="form-control" id="exampleInputName1" placeholder="Twitter">
+                    <span asp-validation-for="Twitter" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LinkEdin" for="exampleInputName1">Linkedin</label>
+                    <input asp-for="LinkEdin" class="form-control" id="exampleInputName1" placeholder="Linkedin">
+                    <span asp-validation-for="LinkEdin" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Image">Image</label>
+                    <input asp-for="Image" class="form-control" id="exampleInputEmail3">
+                   
+                </div>
+                <div class="form-group">
+                    <label asp-for="TeamId">Team Name</label>
+
+
+                     <select asp-for="TeamId" class="form-control">
+                    <option disabled selected>Select Team please</option>
+                    @foreach (Team team in ViewBag.Teams)
+                    {
+
+                    <option value="@team.Id"> @team.Name </option>
+                    }
+                    </select>
+                    </div>
+               
+                
+               
+               
+                <button type="submit" class="btn btn-primary me-2">Create</button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
